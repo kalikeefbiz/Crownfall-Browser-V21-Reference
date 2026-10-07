@@ -1,0 +1,1 @@
+Temporary bootstrap commit for importing the verified Crownfall Arena browser V21 reference snapshot.
