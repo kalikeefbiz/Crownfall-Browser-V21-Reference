@@ -1,0 +1,56 @@
+[
+  {
+    "attachment": 1,
+    "uploaded": "000.png(4).jpeg",
+    "path": "assets/characters/riven/idle/000.png",
+    "sha256": "3ce7a4d34260ac842f4719b48efd7e4b55fccfa21d2c98908793569b9d7950bd"
+  },
+  {
+    "attachment": 2,
+    "uploaded": "001.png(2).PNG",
+    "path": "assets/characters/riven/run/000.png",
+    "sha256": "2a783764302e57f12602decc144d1a389cdd9f1720d75f0af07b510bf291fcd4"
+  },
+  {
+    "attachment": 3,
+    "uploaded": "002.png(3).PNG",
+    "path": "assets/characters/riven/run/001.png",
+    "sha256": "059cf48b8d2937ebf1d16429b99984ccac59b10c6e24a8e7ea4eec8e45261966"
+  },
+  {
+    "attachment": 4,
+    "uploaded": "005.png(2).PNG",
+    "path": "assets/characters/riven/run/002.png",
+    "sha256": "7c3faf90061ff7d6ebc60b508895545b5eb1ef92c03d7cbf6a0e734cc286f7d4"
+  },
+  {
+    "attachment": 5,
+    "uploaded": "000.png(3).PNG",
+    "path": "assets/characters/riven/run/003.png",
+    "sha256": "2f237b5ced1496e893b77186dfd927285767237e7a851d9bd619c01be640239f"
+  },
+  {
+    "attachment": 6,
+    "uploaded": "007.png(1).PNG",
+    "path": "assets/characters/riven/run/004.png",
+    "sha256": "80f57b888c380b30c3913453f137bc5df3b98b9ab38bedc8e136039c899eaf4f"
+  },
+  {
+    "attachment": 7,
+    "uploaded": "006.png(1).PNG",
+    "path": "assets/characters/riven/run/005.png",
+    "sha256": "39a7198bb574d7a8b44be070292aec82bb94e0609770d3ef4aaacb3ebf37ae3e"
+  },
+  {
+    "attachment": 8,
+    "uploaded": "004.png(2).PNG",
+    "path": "assets/characters/riven/run/006.png",
+    "sha256": "8b987f8d8047966da15ee8871a688051c6aca143c5ea2c61a1797fc1090a5222"
+  },
+  {
+    "attachment": 9,
+    "uploaded": "003.png(4).PNG",
+    "path": "assets/characters/riven/run/007.png",
+    "sha256": "dad78a7603c2fd8673df14c3ebf6bd841d992b26b4d7e61a72298be74f646050"
+  }
+]
