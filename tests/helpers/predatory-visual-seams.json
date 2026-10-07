@@ -1,0 +1,8 @@
+{
+  "character-renderer": [
+    [
+      "    const a = item.animator.update(player, sim?.now ?? 0); item.frame = a.clip?.frames[a.frame] || null;\n",
+      "    const sequence = sim?.advanced?.sequence, leap = sim?.advanced?.leap;\n    const contactClip = sequence && 'contact:' + sequence.ability.id;\n    if (sequence && sequence !== item.sequence && item.animator.definition.clips[contactClip])\n      item.animator.trigger(contactClip, sequence.started);\n    item.sequence = sequence;\n    const contactLeap = leap && item.animator.definition.clips['contact:' + leap.ability.id];\n    if (contactLeap) item.animator.action = null;\n    const a = item.animator.update(player, sim?.now ?? 0, contactLeap ? 'run' : undefined); item.frame = a.clip?.frames[a.frame] || null;\n"
+    ]
+  ]
+}
