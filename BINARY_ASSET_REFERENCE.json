@@ -1,0 +1,283 @@
+{
+  "archive": "crownfall-browser-reference-v21.zip",
+  "archive_size_bytes": 63023899,
+  "browser_version": 21,
+  "browser_commit": "5a73918bf4cd56cd54bdc98ba2a9929f4d347753",
+  "verified_original_file_count": 141,
+  "verified_mismatches": 0,
+  "github_preserved_text_source_files": 87,
+  "binary_presentation_assets_not_mirrored_by_connector": 54,
+  "note": "These 54 PNG/JPEG presentation assets remain preserved in the verified archive. Their exact paths, sizes, and SHA-256 hashes are recorded here so Codex can distinguish code/reference completeness from binary transport completeness.",
+  "assets": [
+    {
+      "path": "assets/ucl-arena-menu.jpeg",
+      "size_bytes": 721906,
+      "sha256": "d785263520bd9ecef5b0c680550e322c8eb39a0d18ea15d055b77d316a697259"
+    },
+    {
+      "path": "assets/characters/set/idle/000.png",
+      "size_bytes": 364840,
+      "sha256": "ce0d6d12e3b085fa992aa8983e7e389dac2a26546970ab4aa24ff5899295e1bc"
+    },
+    {
+      "path": "assets/characters/set/panther-fist/000.png",
+      "size_bytes": 2544470,
+      "sha256": "2211d2e3fc374b779c0db8a247a4f14af0a732eb91ba4dd5bef3815bb1818146"
+    },
+    {
+      "path": "assets/characters/set/panther-fist/001.png",
+      "size_bytes": 412259,
+      "sha256": "ef07fe1f906330281ca3b715d5f527bbcbb2d9ca9cfc7abb874c57f953b2f134"
+    },
+    {
+      "path": "assets/characters/set/war-cry/000.png",
+      "size_bytes": 364840,
+      "sha256": "ce0d6d12e3b085fa992aa8983e7e389dac2a26546970ab4aa24ff5899295e1bc"
+    },
+    {
+      "path": "assets/characters/set/war-cry/001.png",
+      "size_bytes": 571914,
+      "sha256": "f7756b4eab6917b050f4a270566ad8dedddfc59b3552f57dbbd01e70e068dd7e"
+    },
+    {
+      "path": "assets/characters/set/war-cry/002.png",
+      "size_bytes": 3138959,
+      "sha256": "be75c2ece361d8ee3e8245368430131e5823fc928feac45aff1b347b97af51ce"
+    },
+    {
+      "path": "assets/characters/set/basic/000.png",
+      "size_bytes": 391123,
+      "sha256": "53302e4e7c569650db6c3e10c31d6a616863862251ee5c7d34f6aa023aabe3fa"
+    },
+    {
+      "path": "assets/characters/set/basic/001.png",
+      "size_bytes": 605623,
+      "sha256": "27f16dcc7e9c7c0182c8bc6a73cd4c769abf05c438e9fda5d0b4af4db6da92b2"
+    },
+    {
+      "path": "assets/characters/set/basic/002.png",
+      "size_bytes": 2295747,
+      "sha256": "e0be2d9803eda350586b65a62f533c734ed489b45038d855e012464d8470175f"
+    },
+    {
+      "path": "assets/characters/set/basic/003.png",
+      "size_bytes": 555848,
+      "sha256": "0dba1193b5f88ade032bc33b99ddf587801256c80c78231ff8ae384ee4cb0247"
+    },
+    {
+      "path": "assets/characters/set/run/000.png",
+      "size_bytes": 228026,
+      "sha256": "35176690b23231d5877417dd949ff7b23d9f62abdf77f915a5f164ed9a1ced8a"
+    },
+    {
+      "path": "assets/characters/set/run/001.png",
+      "size_bytes": 267388,
+      "sha256": "0aaf326cad5d65124c6e8fa754f8a8ae5285e982e53d864ebc0c1e7f5429a1da"
+    },
+    {
+      "path": "assets/characters/set/run/002.png",
+      "size_bytes": 253991,
+      "sha256": "c6e6f339b2037ec208bde333bea96167165c4441b27973de943993e5c01d4f12"
+    },
+    {
+      "path": "assets/characters/set/run/003.png",
+      "size_bytes": 246701,
+      "sha256": "0aa5d984aa89a011b0642a6a2ea8b9c810680f5ed1289635761f94106bbe09c3"
+    },
+    {
+      "path": "assets/characters/set/run/004.png",
+      "size_bytes": 229140,
+      "sha256": "ea342b35d815bad836b07ce08ac9aac1d45d955150d3de7290cbdeddebe57487"
+    },
+    {
+      "path": "assets/characters/set/run/005.png",
+      "size_bytes": 239187,
+      "sha256": "0615f62d8de50ef736819ae6c156ab7281637495abf6c5a15c36151b3b587b86"
+    },
+    {
+      "path": "assets/characters/set/run/006.png",
+      "size_bytes": 238563,
+      "sha256": "5b949d526b8400a9ce9b1b09152917fa365d0357adc592fc382793aedc2d0a56"
+    },
+    {
+      "path": "assets/characters/set/run/007.png",
+      "size_bytes": 240778,
+      "sha256": "891c8e35a22a0dc29efe8381cebafb7cec1e1733892af2a6cc3e051d81cd9d6c"
+    },
+    {
+      "path": "assets/characters/riven/idle/000.png",
+      "size_bytes": 213809,
+      "sha256": "3ce7a4d34260ac842f4719b48efd7e4b55fccfa21d2c98908793569b9d7950bd"
+    },
+    {
+      "path": "assets/characters/riven/run/000.png",
+      "size_bytes": 1488328,
+      "sha256": "2a783764302e57f12602decc144d1a389cdd9f1720d75f0af07b510bf291fcd4"
+    },
+    {
+      "path": "assets/characters/riven/run/001.png",
+      "size_bytes": 1475923,
+      "sha256": "059cf48b8d2937ebf1d16429b99984ccac59b10c6e24a8e7ea4eec8e45261966"
+    },
+    {
+      "path": "assets/characters/riven/run/002.png",
+      "size_bytes": 1618025,
+      "sha256": "7c3faf90061ff7d6ebc60b508895545b5eb1ef92c03d7cbf6a0e734cc286f7d4"
+    },
+    {
+      "path": "assets/characters/riven/run/003.png",
+      "size_bytes": 1208160,
+      "sha256": "2f237b5ced1496e893b77186dfd927285767237e7a851d9bd619c01be640239f"
+    },
+    {
+      "path": "assets/characters/riven/run/004.png",
+      "size_bytes": 1572609,
+      "sha256": "80f57b888c380b30c3913453f137bc5df3b98b9ab38bedc8e136039c899eaf4f"
+    },
+    {
+      "path": "assets/characters/riven/run/005.png",
+      "size_bytes": 1551604,
+      "sha256": "39a7198bb574d7a8b44be070292aec82bb94e0609770d3ef4aaacb3ebf37ae3e"
+    },
+    {
+      "path": "assets/characters/riven/run/006.png",
+      "size_bytes": 1592500,
+      "sha256": "8b987f8d8047966da15ee8871a688051c6aca143c5ea2c61a1797fc1090a5222"
+    },
+    {
+      "path": "assets/characters/riven/run/007.png",
+      "size_bytes": 1472680,
+      "sha256": "dad78a7603c2fd8673df14c3ebf6bd841d992b26b4d7e61a72298be74f646050"
+    },
+    {
+      "path": "assets/characters/kit-asher/idle/000.png",
+      "size_bytes": 914501,
+      "sha256": "e76380deb3da2a80a0a4a4ddc554567c65e688bab8c5be2090a7003664eca074"
+    },
+    {
+      "path": "assets/characters/kit-asher/abilities/ember-step-trail.png",
+      "size_bytes": 1161480,
+      "sha256": "ca458b5eb99a326dfdec0eccb0911b345de759a62e634cc68a377722222c7b20"
+    },
+    {
+      "path": "assets/characters/kit-asher/abilities/expellant-blast.png",
+      "size_bytes": 1728900,
+      "sha256": "f3f7f9342a7ff34332bec5d7628f53ac44f50ff8bb2e61d96a6dc9b117ae9de1"
+    },
+    {
+      "path": "assets/characters/kit-asher/abilities/expellant-cast.png",
+      "size_bytes": 1771704,
+      "sha256": "96f0bfede9a139bd3733deda1f112d17895246c9f17b46e99a7de57e6b11df82"
+    },
+    {
+      "path": "assets/characters/kit-asher/abilities/last-flame.png",
+      "size_bytes": 1342520,
+      "sha256": "9d90e444c3aa321db1f63f5d524eb2e82c550ccc0c6af6ec6cc036cb637f2a49"
+    },
+    {
+      "path": "assets/characters/kit-asher/abilities/solar-ring.png",
+      "size_bytes": 2509948,
+      "sha256": "f51262474d8c3d18774b0aa78e8cadc7e0089679b327bae158c0993ddcee9422"
+    },
+    {
+      "path": "assets/characters/kit-asher/basic/000.png",
+      "size_bytes": 1574896,
+      "sha256": "d5918960e4f5341ec72ea3cbcf2798fdb97f104f519865521262826b11c07896"
+    },
+    {
+      "path": "assets/characters/kit-asher/basic/001.png",
+      "size_bytes": 1895138,
+      "sha256": "956f9cc4619f6135ecba9d4dc6f519418ec005eaca2f5cd1c03a621a0351ccfc"
+    },
+    {
+      "path": "assets/characters/kit-asher/basic/002.png",
+      "size_bytes": 1534019,
+      "sha256": "dfb1f7b508cfa64c8a9729b87c529837773b4ebca279dd5cbe66bc2b3f5140fa"
+    },
+    {
+      "path": "assets/characters/kit-asher/basic/003.png",
+      "size_bytes": 2133656,
+      "sha256": "92100d6ed6cb41eee6a3c26fe7c770091b0851847f2d083a4b2063f9028b1cd8"
+    },
+    {
+      "path": "assets/characters/kit-asher/basic/004.png",
+      "size_bytes": 2214467,
+      "sha256": "2c38d635f7655bad152d3276623f3e8d6acee4f35fe003b3703fb1312dc55ecb"
+    },
+    {
+      "path": "assets/characters/kit-asher/basic/005.png",
+      "size_bytes": 1605465,
+      "sha256": "4f3410f8cb66d8b3a4bcc48502092fcff9c8accf19160a3fea7eb7a4d47bc243"
+    },
+    {
+      "path": "assets/characters/kit-asher/run/000.png",
+      "size_bytes": 1215559,
+      "sha256": "360e168982343a191c9746a489b36abbf1362e2309d34c6fc3979a7d8909ae64"
+    },
+    {
+      "path": "assets/characters/kit-asher/run/001.png",
+      "size_bytes": 1465371,
+      "sha256": "adfc97a16f6a505d351206db0782e0083d11a12ebd94936045f434e39784c26a"
+    },
+    {
+      "path": "assets/characters/kit-asher/run/002.png",
+      "size_bytes": 1536764,
+      "sha256": "9c25d02ac5d21841c3518357068f649d1876b1892882ae7eef3d8d6b27ff2b34"
+    },
+    {
+      "path": "assets/characters/kit-asher/run/003.png",
+      "size_bytes": 1544270,
+      "sha256": "726ef12c5253ac6520e240aba5656eef92774473ef83313e7e681a042df01465"
+    },
+    {
+      "path": "assets/characters/kit-asher/run/004.png",
+      "size_bytes": 1399425,
+      "sha256": "77077e2ac3e131578c53a49446b361648355146326acda1afa663d734ed6a9d8"
+    },
+    {
+      "path": "assets/characters/kit-asher/run/005.png",
+      "size_bytes": 1515013,
+      "sha256": "c7a164c2f424ed586415021308a3d2fe1e1c0c10103415cb7d827dcd2cf088dc"
+    },
+    {
+      "path": "assets/characters/kit-asher/run/006.png",
+      "size_bytes": 1635142,
+      "sha256": "849ea0a88316158c95808dfa7ca2026fb4e0d77d99d038fee4a04f1769cf2076"
+    },
+    {
+      "path": "assets/characters/kit-asher/run/007.png",
+      "size_bytes": 1534445,
+      "sha256": "19ddf4a9bd38ab4bb1ee28e4d5fc282cea4b14fdebaf9b977324379a76c5dee6"
+    },
+    {
+      "path": "assets/arena/goal.jpeg",
+      "size_bytes": 811689,
+      "sha256": "f34aa59763b6adeff1b3683a4715d7734afca7d075e3ff0cc40cb901181ff616"
+    },
+    {
+      "path": "assets/arena/lane.jpeg",
+      "size_bytes": 929498,
+      "sha256": "bbd55cce16cbc967704c05d15d199b4c24a09475fa55ae48e6ca11c2abce6d48"
+    },
+    {
+      "path": "assets/arena/major.jpeg",
+      "size_bytes": 900436,
+      "sha256": "37dc3a562c8a7f99fd20b05f05ba61c6be13e2e8d846076a2d4fdf71a92e06e7"
+    },
+    {
+      "path": "assets/arena/midfield.jpeg",
+      "size_bytes": 551574,
+      "sha256": "d9e744fdac6422255f37db5cc84d4f7c74ba56eb25720114387159203f21fc98"
+    },
+    {
+      "path": "assets/arena/minor.jpeg",
+      "size_bytes": 808215,
+      "sha256": "e8328651a09496399068b70054f3bff72b3fdddf90b762756430ab24480f2876"
+    },
+    {
+      "path": "assets/arena/wilderness.jpeg",
+      "size_bytes": 1006910,
+      "sha256": "40d800fcc8353e9531215acc899eecd813be89251ce06332d5ea7d2cb66daf66"
+    }
+  ]
+}
