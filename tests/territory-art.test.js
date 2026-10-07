@@ -1,0 +1,15 @@
+import {withoutM92Presentation} from './helpers/m92-presentation-seams.js';
+import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import {execFileSync} from 'node:child_process';
+import {ArenaArt,ARENA_ART} from '../src/arena-art.js';import {MATCH_MAP} from '../src/match-data.js';import {CrownfallRules} from '../src/crownfall-rules.js';import {withoutM91Presentation} from './helpers/m91-render-seams.js';
+test('M9.1 retains exact baseline art files, gameplay and renderer beyond three approved presentation seams',()=>{
+ for(const name of ['main','game-ux','control-layout','match','match-data','crownfall-rules','match-bots','wilderness','combat','combat-data','combat-core','config','simulation','input','ability-input','camera','combat-view','combat-feedback','hud-presentation'])assert.equal(withoutM92Presentation(fs.readFileSync('src/'+name+'.js','utf8'),name),execFileSync('git',['show','914a2de:src/'+name+'.js'],{encoding:'utf8'}),name);
+ assert.equal(withoutM91Presentation(fs.readFileSync('src/renderer.js','utf8')),execFileSync('git',['show','914a2de:src/renderer.js'],{encoding:'utf8'}));
+ for(const name of ARENA_ART.assets)assert.deepEqual(fs.readFileSync('assets/arena/'+name+'.jpeg'),execFileSync('git',['show','914a2de:assets/arena/'+name+'.jpeg']));
+});
+test('floor uniforms track actual rules at neutral, both advantages, rapid handoffs and total control without mutation',()=>{
+ const oldImage=globalThis.Image,oldDocument=globalThis.document,values={},draws=[];globalThis.Image=class{constructor(){this.width=1024;this.height=1024;}set src(v){this.onload();}};globalThis.document={createElement:()=>({getContext:()=>({drawImage(){}})})};
+ const gl=new Proxy({}, {get:(_,k)=>k==='getUniformLocation'?(_,n)=>n:k==='uniform1f'||k==='uniform4f'?(n,...v)=>values[n]=v:k==='drawArrays'?()=>draws.push(structuredClone(values)):k==='getParameter'?()=>1024:k==='getShaderParameter'||k==='getProgramParameter'?()=>true:/^[A-Z_0-9]+$/.test(k)?1:()=>({})});
+ try{const art=new ArenaArt(gl),rules=new CrownfallRules({},MATCH_MAP.lane);for(const fraction of [.5,.7,.3,.71,.29,1,0,.5]){const x=-28+56*fraction;rules.measure(fraction===1?[{team:1,x:28,z:0}]:fraction===0?[{team:2,x:-28,z:0}]:[{team:1,x:x-1,z:0},{team:2,x:x+1,z:0}]);const before=JSON.stringify(rules);art.render(MATCH_MAP,{x:0,z:0},2,rules);assert.equal(JSON.stringify(rules),before);const d=draws.at(-1);assert.deepEqual(d.front,[rules.front]);assert.deepEqual(d.rect,[0,0,56,24]);assert.deepEqual(d.mode,[6]);assert.deepEqual(d.territoryOpacity,[.12]);assert.ok(Math.abs((d.front[0]+28)/56-rules.control)<1e-12);assert.equal(d.elevation[0],.09);}
+ assert.equal(draws.length,8*15);const before=draws.length;art.render(MATCH_MAP,{x:0,z:0},2);assert.equal(draws.length-before,14);
+ }finally{if(oldImage===undefined)delete globalThis.Image;else globalThis.Image=oldImage;if(oldDocument===undefined)delete globalThis.document;else globalThis.document=oldDocument;}
+});
