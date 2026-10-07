@@ -23,3 +23,9 @@ The connected GitHub API can create binary blobs only when their bytes are passe
 Their authoritative paths, byte sizes, and SHA-256 hashes are in `BINARY_ASSET_REFERENCE.json`. The original verified archive remains preserved separately in ChatGPT Library.
 
 For browser-to-Unity behavioral/source inspection, the executable source, docs, build tools, and full test suite are directly committed and individually navigable here.
+
+## Validation note
+
+The preserved source was rebuilt locally with `npm run build`, which successfully regenerated `dist/index.html` and approved menu artwork.
+
+A subsequent `npm test` run executed **180 tests: 167 passed and 13 failed**. Every remaining failure is a historical-baseline assertion that invokes `git show <older commit>`. The preserved reference archive intentionally excludes `.git/`, so those historical commit objects are unavailable in a bare extraction. After rebuilding `dist/`, no remaining failure was caused by missing built output or by a separate runtime/source regression.
