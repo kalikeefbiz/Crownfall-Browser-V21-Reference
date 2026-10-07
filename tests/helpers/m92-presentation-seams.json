@@ -1,0 +1,100 @@
+{
+  "src/renderer.js": [
+    [
+      "import {ArenaArt}",
+      "import {CharacterRenderer} from './character-renderer.js';\nimport {ArenaArt}"
+    ],
+    [
+      "this.art=new ArenaArt(gl);gl.useProgram(this.program);",
+      "this.art=new ArenaArt(gl);this.characters=new CharacterRenderer(gl);gl.useProgram(this.program);"
+    ],
+    [
+      "drawBuffer(buffer,count){",
+      "drawBuffer(buffer,count,first=0){"
+    ],
+    [
+      "gl.drawArrays(gl.TRIANGLES,0,count);",
+      "gl.drawArrays(gl.TRIANGLES,first,count);"
+    ],
+    [
+      "const m=this.dynamicMesh;m.v.length=0;",
+      "this.characters.prepare(combat,p);this.characters.drawShadows(camera,w/h);gl.useProgram(this.program);\n    const m=this.dynamicMesh;m.v.length=0;"
+    ],
+    [
+      "actor.sim===combat&&aiming);",
+      "actor.sim===combat&&aiming,this.characters.replaces(actor.sim.player));"
+    ],
+    [
+      "}else drawSummoner(m,p,combat,aiming);",
+      "}else drawSummoner(m,p,combat,aiming,this.characters.replaces(p));\n    const worldCount=m.v.length/6;"
+    ],
+    [
+      "this.drawBuffer(this.dynamicBuffer,m.v.length/6);",
+      "this.drawBuffer(this.dynamicBuffer,worldCount);\n    gl.disableVertexAttribArray(this.pos);gl.disableVertexAttribArray(this.col);\n    this.characters.drawSprites(camera,w/h);gl.useProgram(this.program);\n    this.drawBuffer(this.dynamicBuffer,m.v.length/6-worldCount,worldCount);"
+    ],
+    [
+      "function drawSummoner(m,p,combat,aiming){",
+      "function drawSummoner(m,p,combat,aiming,sprite=false){"
+    ],
+    [
+      "    m.disc(x,.1,z,.68,'#152126');",
+      "    if(!sprite)m.disc(x,.1,z,.68,'#152126');"
+    ],
+    [
+      "    const part=(lx",
+      "    if(!sprite){\n    const part=(lx"
+    ],
+    [
+      "    const fx=Math.sin(angle),fz=Math.cos(angle);",
+      "    }\n    const fx=Math.sin(angle),fz=Math.cos(angle);"
+    ],
+    [
+      "this.characters.prepare(combat,p);this.characters.drawShadows(camera,w/h);",
+      "this.characters.prepare(combat,p);this.characters.drawEffects(camera,w/h,true);this.characters.drawShadows(camera,w/h);"
+    ],
+    [
+      "drawCombat(m,actor.sim,actor.sim===combat?preview:null)",
+      "drawCombat(m,actor.sim,actor.sim===combat?preview:null,this.characters)"
+    ],
+    [
+      "drawCombat(m,combat,preview)",
+      "drawCombat(m,combat,preview,this.characters)"
+    ],
+    [
+      "this.characters.drawSprites(camera,w/h);gl.useProgram(this.program);",
+      "this.characters.drawSprites(camera,w/h);this.characters.drawEffects(camera,w/h,false);gl.useProgram(this.program);"
+    ]
+  ],
+  "src/combat-feedback.js": [
+    [
+      "this.listeners=new Set();this.reset();",
+      "this.listeners=new Set();this.visualListeners=new Set();this.reset();"
+    ],
+    [
+      " subscribe(listener)",
+      " subscribeVisual(listener){this.visualListeners.add(listener);return ()=>this.visualListeners.delete(listener);}\n subscribe(listener)"
+    ],
+    [
+      "emit(e){if(!this.config.enabled)return;",
+      "emit(e){for(const listener of this.visualListeners)try{listener(Object.freeze({type:'character-animation',event:e.type,time:e.time,source:e.source?.id,target:e.target?.id,ability:e.ability?.id,basic:!!e.ability?.basic}));}catch{/* Animation cannot interrupt combat. */}if(!this.config.enabled)return;"
+    ]
+  ],
+  "src/combat-view.js": [
+    [
+      "export function drawCombat(mesh,sim,preview){",
+      "export function drawCombat(mesh,sim,preview,visuals=null){"
+    ],
+    [
+      "if(!e.active)continue;if(e.type===",
+      "if(!e.active||visuals?.replacesEffect(sim,e.type))continue;if(e.type==="
+    ],
+    [
+      "if(s.type==='dragon'){",
+      "if(visuals?.replacesEffect(sim,s.type)){/* Authored projectile uses the same live position; keep its hit-path ring below. */}else if(s.type==='dragon'){"
+    ],
+    [
+      "m.disc(impact.x,.15,impact.z,.5,'#9871aa');",
+      "m.disc(impact.x,.15,impact.z,.5,'#9871aa');if(visuals?.replacesEffect(sim,'fallingClaw'))continue;"
+    ]
+  ]
+}
