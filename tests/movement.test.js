@@ -1,0 +1,14 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {MovementSimulation,circleHitsWall} from '../src/simulation.js';
+import {CONFIG,MAP} from '../src/config.js';
+const command=(x,z)=>({moveX:x,moveZ:z,aiming:false});
+test('one second moves exactly configured speed',()=>{const s=new MovementSimulation();for(let i=0;i<60;i++)s.step(command(1,0));assert.ok(Math.abs(s.player.x+11)<1e-9);});
+test('diagonal movement cannot exceed cardinal speed',()=>{const s=new MovementSimulation();for(let i=0;i<30;i++)s.step(command(1,1));assert.ok(Math.abs(s.player.distance-3)<1e-8);});
+test('walls stop penetration and allow sliding',()=>{const s=new MovementSimulation();s.player.x=-9;s.player.z=-4;for(let i=0;i<60;i++)s.step(command(1,-1));assert.ok(s.player.x>-6);assert.ok(s.player.z>=-4.55);assert.equal(s.blocked(s.player.x,s.player.z),false);});
+test('map boundary remains solid after sustained movement',()=>{const s=new MovementSimulation();for(let i=0;i<1000;i++)s.step(command(-1,0));assert.ok(s.player.x>=-24+CONFIG.summoner.radius);assert.ok(s.player.x<-23);});
+test('aim and movement are independent',()=>{const s=new MovementSimulation();s.step({...command(1,0),aiming:true,aimX:0,aimZ:-1});assert.ok(s.player.x>-17);assert.equal(s.player.angle,Math.PI);});
+test('same commands reproduce same state',()=>{const a=new MovementSimulation(),b=new MovementSimulation();for(let i=0;i<900;i++){const c=command(Math.sin(i/100),Math.cos(i/100));a.step(c);b.step(c);}assert.deepEqual(a.player,b.player);});
+test('reset restores spawn and interpolation position',()=>{const s=new MovementSimulation();s.step(command(1,0));s.reset();assert.deepEqual(s.player.previous,CONFIG.summoner.spawn);assert.equal(s.player.x,-17);assert.equal(s.player.distance,0);});
+test('collision substeps prevent tunnelling through walls',()=>{const s=new MovementSimulation();s.player.x=-9;s.player.z=0;s.step(command(0,-1),2);assert.ok(s.player.z>-4.56);assert.equal(s.blocked(s.player.x,s.player.z),false);});
+test('map markers spawn outside all walls',()=>{for(const p of MAP.markers)for(const w of MAP.walls)assert.equal(circleHitsWall(p.x,p.z,CONFIG.summoner.radius,w),false);});
