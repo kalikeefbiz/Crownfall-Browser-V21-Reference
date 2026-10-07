@@ -1,0 +1,18 @@
+{
+  "character-renderer": [
+    [
+      "        for (const e of sim.effects.items) if (e.active && e.type === 'radial' && data.radial)\n          this.drawEffect(data.radial, e.x, e.z, Math.PI / 2, e.range * 2, e.range * 2, .5, .17,\n",
+      "        for (const e of sim.effects.items) if (e.active && (e.type === 'radial' || e.type === 'slam') && data[e.type])\n          this.drawEffect(data[e.type], e.x, e.z, Math.PI / 2, e.range * 2, e.range * 2, .5, .17,\n"
+    ],
+    [
+      "",
+      "        const claw = data.fallingClaw, entry = claw && this.cache.entries.get(claw.src);\n        if (entry?.status === 'ready') {\n          const gl = this.gl, u = this.u;\n          gl.uniform1f(u.mode, 0); gl.uniform1f(u.edgeMask, 0);\n          gl.bindTexture(gl.TEXTURE_2D, entry.texture);\n          gl.uniform4f(u.uvRect, 0, 0, 1, 1); gl.uniform1f(u.flip, 0);\n          gl.uniform2f(u.matte, claw.matte?.low ?? 1, claw.matte?.high ?? 1);\n          gl.uniform1f(u.opacity, 1);\n          for (const impact of sim.advanced.impacts) {\n            // Read the same authoritative countdown as the existing falling primitive.\n            const progress = Math.max(0, Math.min(1, (sim.now - impact.created) / impact.ability.castTime));\n            const height = .4 + Math.pow(1 - progress, .6) * 5;\n            gl.uniform2f(u.origin, impact.x, impact.z);\n            gl.uniform4f(u.rect, -claw.width / 2, height * CONFIG.camera.tiltCos, claw.width, claw.height);\n            gl.drawArrays(gl.TRIANGLES, 0, 6);\n          }\n          gl.uniform1f(u.mode, 2);\n        }\n"
+    ]
+  ],
+  "combat-view": [
+    [
+      " for(const impact of sim.advanced.impacts){const progress=Math.max(0,Math.min(1,(sim.now-impact.created)/impact.ability.castTime)),height=.4+Math.pow(1-progress,.6)*5;m.ring(impact.x,.2,impact.z,impact.ability.radius,.08,sim.player.team===1?'#83d9c9':'#ed94aa');m.disc(impact.x,.15,impact.z,.5,'#9871aa');m.box(impact.x,height,impact.z,1.8,1.25,1.5,'#9f6ec8');for(let i=0;i<4;i++)m.box(impact.x-.7+i*.46,height,impact.z+.75,.42,.7,.5,'#ceb0ec');m.box(impact.x+1,height+.2,impact.z,.5,.8,.65,'#b38bdb');}\n",
+      " for(const impact of sim.advanced.impacts){const progress=Math.max(0,Math.min(1,(sim.now-impact.created)/impact.ability.castTime)),height=.4+Math.pow(1-progress,.6)*5;m.ring(impact.x,.2,impact.z,impact.ability.radius,.08,sim.player.team===1?'#83d9c9':'#ed94aa');m.disc(impact.x,.15,impact.z,.5,'#9871aa');if(visuals?.replacesEffect(sim,'fallingClaw'))continue;m.box(impact.x,height,impact.z,1.8,1.25,1.5,'#9f6ec8');for(let i=0;i<4;i++)m.box(impact.x-.7+i*.46,height,impact.z+.75,.42,.7,.5,'#ceb0ec');m.box(impact.x+1,height+.2,impact.z,.5,.8,.65,'#b38bdb');}\n"
+    ]
+  ]
+}
